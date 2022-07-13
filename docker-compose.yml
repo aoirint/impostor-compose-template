@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  impostor:
+    image: aeonlucid/impostor:v1.7.1
+    ports:
+      - "${HOST_PORT}:22023/udp"
+    volumes:
+      - "./config/config.json:/app/config.json"
+      - "./plugins:/app/plugins"
+      - "./libraries:/app/libraries"
+
