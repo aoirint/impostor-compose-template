@@ -5,7 +5,7 @@
 
 ## デプロイ
 
-サーバ向けDocker EngineおよびDocker Compose V2が導入されたLinuxサーバ（Ubuntu）を想定します。
+サーバ向けDocker EngineおよびDocker Compose V2が導入されたLinuxサーバ（Ubuntu）を想定する。
 
 - <https://docs.docker.com/engine/install/ubuntu/>
 
@@ -67,4 +67,4 @@ sudo docker compose down
 
 ## 接続
 
-カスタムサーバの設定に対応したMODを導入し、IP（ホスト名）とポート番号を設定します。
+カスタムサーバの設定に対応したMODを導入し、IP（ホスト名）とポート番号を設定する。
