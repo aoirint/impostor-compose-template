@@ -63,3 +63,8 @@ sudo docker compose down
 
 - <https://github.com/Impostor/Impostor/blob/6b6fa081250d235d1a7f0d4f8765c2816bb5f394/docs/Server-configuration.md>
 - <https://github.com/Impostor/Impostor/blob/6b6fa081250d235d1a7f0d4f8765c2816bb5f394/src/Impostor.Server/config-full.json>
+
+
+## 接続
+
+カスタムサーバの設定に対応したMODを導入し、IP（ホスト名）とポート番号を設定します。
