@@ -5,6 +5,10 @@
 
 ## デプロイ
 
+サーバ向けDocker EngineおよびDocker Compose V2が導入されたLinuxサーバ（Ubuntu）を想定します。
+
+- <https://docs.docker.com/engine/install/ubuntu/>
+
 `template.env`を`.env`にコピーする。以下、設定例。
 
 - `HOST_PORT`は、必要があればバインドするアドレスに書き換える。通常、`0.0.0.0:22023`でよい。
@@ -36,23 +40,23 @@ HOST_PORT=0.0.0.0:22023
 }
 ```
 
-docker-composeで起動する。
+### 起動
 
 ```shell
-docker-compose pull
-docker-compose up -d
+sudo docker compose pull
+sudo docker compose up -d
 ```
 
-docker-composeでログを確認する。
+### ログの確認
 
 ```shell
-docker-compose logs -t -f
+sudo docker compose logs -t -f
 ```
 
-docker-composeで終了する。
+### 終了
 
 ```shell
-docker-compose down
+sudo docker compose down
 ```
 
 ### Config作成の際に参考になるリンク
