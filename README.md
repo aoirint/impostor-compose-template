@@ -23,8 +23,7 @@ HOST_PORT=0.0.0.0:22023
 
 - 以下の場合、AntiCheatは無効化する
     - うまくプレイできない（ルームの作成、参加時、試合開始時などに弾かれる）
-    - ゲームクライアントにExtreme Rolesを導入している（それぞれの実装に詳しくないのでわからないが、バニラと異なるパケットを送るMOD使用時は弾かれる？　おそらくTOR/TOR-GMも同様）
-    - （カスタムサーバーに対応するだけ、くらいのシンプルなMODでもない限り、AntiCheatは無効化しておいた方がいいかもしれない）
+    - MODを導入している
 - `PublicIp`はWAN側IPアドレスに書き換える
 - `PublicPort`はWAN側ポート番号に書き換える
 
@@ -70,4 +69,98 @@ sudo docker compose down
 
 ## 接続
 
-カスタムサーバの設定に対応したMODを導入し、IP（ホスト名）とポート番号を設定する。
+### カスタムサーバー設定機能のあるMOD
+
+MODの機能を使って設定する。
+
+### バニラ
+
+`C:\Users\user\AppData\LocalLow\Innersloth\Among Us\regionInfo.json`を編集する。
+
+`Regions`に以下を追加する。
+
+ホスト名`myserver.example.com`の場合、
+
+```json
+{"$type":"DnsRegionInfo, Assembly-CSharp","Fqdn":"myserver.example.com","DefaultIp":"myserver.example.com","Port":22023,"UseDtls":false,"Name":"custom","TranslateName":1003}
+```
+
+IPアドレス`127.0.0.1`の場合、
+
+```json
+{"$type":"DnsRegionInfo, Assembly-CSharp","Fqdn":"127.0.0.1","DefaultIp":"127.0.0.1","Port":22023,"UseDtls":false,"Name":"custom","TranslateName":1003}
+```
+
+JSONを吐き出してくれるツールがあったが、公式サーバーの情報が古そうだったので個人的に非推奨（ <https://impostor.github.io/Impostor/> ）。
+
+#### 2022.8.23s
+
+<details>
+
+```json
+{
+  "CurrentRegionIdx": 3,
+  "Regions": [
+    {
+      "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+      "Name": "North America",
+      "PingServer": "matchmaker.among.us",
+      "Servers": [
+        {
+          "Name": "Http-1",
+          "Ip": "https://matchmaker.among.us",
+          "Port": 443,
+          "UseDtls": true,
+          "Players": 0,
+          "ConnectionFailures": 0
+        }
+      ],
+      "TranslateName": 289
+    },
+    {
+      "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+      "Name": "Europe",
+      "PingServer": "matchmaker-eu.among.us",
+      "Servers": [
+        {
+          "Name": "Http-1",
+          "Ip": "https://matchmaker-eu.among.us",
+          "Port": 443,
+          "UseDtls": true,
+          "Players": 0,
+          "ConnectionFailures": 0
+        }
+      ],
+      "TranslateName": 290
+    },
+    {
+      "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+      "Name": "Asia",
+      "PingServer": "matchmaker-as.among.us",
+      "Servers": [
+        {
+          "Name": "Http-1",
+          "Ip": "https://matchmaker-as.among.us",
+          "Port": 443,
+          "UseDtls": true,
+          "Players": 0,
+          "ConnectionFailures": 0
+        }
+      ],
+      "TranslateName": 291
+    },
+    {
+      "$type": "DnsRegionInfo, Assembly-CSharp",
+      "Fqdn": "127.0.0.1",
+      "DefaultIp": "127.0.0.1",
+      "Port": 22023,
+      "UseDtls": false,
+      "Name": "custom",
+      "TranslateName": 1003
+    }
+  ]
+}
+```
+
+</details>
+
