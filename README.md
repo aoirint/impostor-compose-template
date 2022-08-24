@@ -94,3 +94,66 @@ IPアドレス`127.0.0.1`の場合、
 カスタムサーバの設定に対応したMODを導入し、IP（ホスト名）とポート番号を設定する。
 
 JSONを吐き出してくれるツールがあったが、公式サーバーの情報が古そうだったので個人的に非推奨（ <https://impostor.github.io/Impostor/> ）。
+
+#### 2022.8.23s
+
+<details>
+
+```json
+{
+  "CurrentRegionIdx": 2,
+  "Regions": [
+    {
+      "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+      "Name": "North America",
+      "PingServer": "matchmaker.among.us",
+      "Servers": [
+        {
+          "Name": "Http-1",
+          "Ip": "https://matchmaker.among.us",
+          "Port": 443,
+          "UseDtls": true,
+          "Players": 0,
+          "ConnectionFailures": 0
+        }
+      ],
+      "TranslateName": 289
+    },
+    {
+      "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+      "Name": "Europe",
+      "PingServer": "matchmaker-eu.among.us",
+      "Servers": [
+        {
+          "Name": "Http-1",
+          "Ip": "https://matchmaker-eu.among.us",
+          "Port": 443,
+          "UseDtls": true,
+          "Players": 0,
+          "ConnectionFailures": 0
+        }
+      ],
+      "TranslateName": 290
+    },
+    {
+      "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+      "Name": "Asia",
+      "PingServer": "matchmaker-as.among.us",
+      "Servers": [
+        {
+          "Name": "Http-1",
+          "Ip": "https://matchmaker-as.among.us",
+          "Port": 443,
+          "UseDtls": true,
+          "Players": 0,
+          "ConnectionFailures": 0
+        }
+      ],
+      "TranslateName": 291
+    }
+  ]
+}
+```
+
+</details>
+
