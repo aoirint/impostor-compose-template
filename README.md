@@ -99,7 +99,7 @@ JSONを吐き出してくれるツールがあったが、公式サーバーの�
 
 ```json
 {
-  "CurrentRegionIdx": 2,
+  "CurrentRegionIdx": 3,
   "Regions": [
     {
       "$type": "StaticHttpRegionInfo, Assembly-CSharp",
@@ -148,6 +148,15 @@ JSONを吐き出してくれるツールがあったが、公式サーバーの�
         }
       ],
       "TranslateName": 291
+    },
+    {
+      "$type": "DnsRegionInfo, Assembly-CSharp",
+      "Fqdn": "127.0.0.1",
+      "DefaultIp": "127.0.0.1",
+      "Port": 22023,
+      "UseDtls": false,
+      "Name": "custom",
+      "TranslateName": 1003
     }
   ]
 }
