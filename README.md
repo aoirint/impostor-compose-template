@@ -91,8 +91,6 @@ IPアドレス`127.0.0.1`の場合、
 {"$type":"DnsRegionInfo, Assembly-CSharp","Fqdn":"127.0.0.1","DefaultIp":"127.0.0.1","Port":22023,"UseDtls":false,"Name":"custom","TranslateName":1003}
 ```
 
-カスタムサーバの設定に対応したMODを導入し、IP（ホスト名）とポート番号を設定する。
-
 JSONを吐き出してくれるツールがあったが、公式サーバーの情報が古そうだったので個人的に非推奨（ <https://impostor.github.io/Impostor/> ）。
 
 #### 2022.8.23s
