@@ -69,31 +69,77 @@ sudo docker compose down
 
 ## 接続
 
+### Among Us v2022.12.8/v2022.12.14における注意点
+
+Among Usの仕様変更により、UDPのみによる接続が難しくなりました（Among Us公式では、2022.8.23sの時点で既にHTTPマッチングサーバが使われるようになっているため、今後の利用可能性は不透明です）。
+
+このバージョンに対応したImpostor 1.8.0では、HTTPマッチングサーバのカスタム実装である[Impostor.Httpプラグイン](https://github.com/Impostor/Impostor.Http)を導入することが[推奨されています](https://github.com/Impostor/Impostor/releases/tag/v1.8.0)。ただし、クライアントにカスタムサーバーを設定する機能があるMODを導入している場合、HTTPマッチングサーバに非対応の可能性があります。
+
+#### 問題
+
+ホストは、「ゲームを作成する」でマッチングルームを作成するUIを開いたときに、「カスタムサーバのIPアドレスとポート番号宛てにHTTPS通信を試み、失敗した」旨のエラーダイアログがゲーム画面上に表示されます。このエラーダイアログのメッセージには、カスタムサーバのIPアドレスとポート番号が表示されます。そして、Among Usアカウントがサインアウトし、マッチングルームを作成できません。
+
+#### 回避策
+
+ホストおよびゲストは、以下の手順を踏むことで、エラーダイアログの表示およびマッチングできない問題を回避できます。
+
+1. 以下の「Among Us 2022.10.25時点の接続手順」に従って、カスタムサーバを設定する
+2. タイトル画面から「オンライン」を開き、リージョンを公式サーバに設定する
+3. ホストとして公式サーバで「ゲームを作成する」を開き、なにもせずに戻る
+4. リージョンをカスタムサーバに設定する
+5. 以後、通常の手順に従ってゲームを作成または参加する。
+
+さらなる注意点として、この手順に従った場合でも、マッチングルームに入室した後で、上記のエラーダイアログが画面右下に表示される場合があります。
+この現象は再現手順が不明なため、回避策がわかりません。
+
+#### Among Us 2022.10.25時点の接続手順
+
+<details>
+
 ### カスタムサーバー設定機能のあるMOD
 
 MODの機能を使って設定する。
 
 ### バニラ
 
-`C:\Users\user\AppData\LocalLow\Innersloth\Among Us\regionInfo.json`を編集する。
+`C:\Users\%USERNAME%\AppData\LocalLow\Innersloth\Among Us\regionInfo.json`を編集する。
 
 `Regions`に以下を追加する。
 
 ホスト名`myserver.example.com`の場合、
 
 ```json
-{"$type":"DnsRegionInfo, Assembly-CSharp","Fqdn":"myserver.example.com","DefaultIp":"myserver.example.com","Port":22023,"UseDtls":false,"Name":"custom","TranslateName":1003}
+{
+  "$type": "DnsRegionInfo, Assembly-CSharp",
+  "Fqdn": "myserver.example.com",
+  "DefaultIp": "myserver.example.com",
+  "Port": 22023,
+  "UseDtls": false,
+  "Name": "custom",
+  "TranslateName": 1003
+}
 ```
 
 IPアドレス`127.0.0.1`の場合、
 
 ```json
-{"$type":"DnsRegionInfo, Assembly-CSharp","Fqdn":"127.0.0.1","DefaultIp":"127.0.0.1","Port":22023,"UseDtls":false,"Name":"custom","TranslateName":1003}
+{
+  "$type": "DnsRegionInfo, Assembly-CSharp",
+  "Fqdn": "127.0.0.1",
+  "DefaultIp": "127.0.0.1",
+  "Port": 22023,
+  "UseDtls": false,
+  "Name": "custom",
+  "TranslateName": 1003
+}
 ```
 
 JSONを吐き出してくれるツールがあったが、公式サーバーの情報が古そうだったので個人的に非推奨（ <https://impostor.github.io/Impostor/> ）。
 
-#### 2022.8.23s
+</details>
+
+
+#### Among Us 2022.8.23s時点のregionInfo.jsonの設定例
 
 <details>
 
