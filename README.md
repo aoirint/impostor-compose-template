@@ -73,7 +73,7 @@ sudo docker compose down
 
 Among Usの仕様変更により、UDPのみによる接続が難しくなりました（Among Us公式では、2022.8.23sの時点で既にHTTPマッチングサーバが使われるようになっているため、今後の利用可能性は不透明です）。
 
-このバージョンに対応したImpostor 1.8.0では、HTTPマッチングサーバのカスタム実装である[Impostor.Httpプラグイン](https://github.com/Impostor/Impostor.Http)を導入することが[推奨されています](https://github.com/Impostor/Impostor/releases/tag/v1.8.0)。
+このバージョンに対応した[Impostor 1.8.0](https://github.com/Impostor/Impostor/releases/tag/v1.8.0)では、HTTPマッチングサーバのカスタム実装である[Impostor.Httpプラグイン](https://github.com/Impostor/Impostor.Http)を導入することが推奨されています。
 
 ただし、クライアントにカスタムサーバーを設定する機能があるMODを導入している場合、HTTPマッチングサーバに非対応の可能性があります。
 この場合、以下の回避策が利用できます。
