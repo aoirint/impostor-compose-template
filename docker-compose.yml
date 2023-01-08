@@ -1,8 +1,8 @@
 version: '3.8'
 services:
   impostor:
-    # image: aeonlucid/impostor:v1.7.1
-    image: aoirint/impostor:v20221223.1
+    image: aeonlucid/impostor:v1.8.0
+    # image: aoirint/impostor:v20221223.1
     ports:
       - "${HOST_PORT}:22023/udp"
     volumes:
