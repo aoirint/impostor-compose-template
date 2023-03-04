@@ -80,7 +80,7 @@ sudo docker compose down
 
 - <https://github.com/Impostor/Impostor/blob/6b6fa081250d235d1a7f0d4f8765c2816bb5f394/docs/Server-configuration.md>
 - <https://github.com/Impostor/Impostor/blob/6b6fa081250d235d1a7f0d4f8765c2816bb5f394/src/Impostor.Server/config-full.json>
-
+- <https://github.com/Impostor/Impostor.Http/blob/20adf632168cc8a7a590a8d4cc307134cca0e2f8/config_http.json>
 
 ## HTTPマッチングサーバを使用する場合の注意点
 
