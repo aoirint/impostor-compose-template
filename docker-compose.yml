@@ -4,9 +4,11 @@ services:
     image: aeonlucid/impostor:v1.8.1
     # image: aoirint/impostor:v20221223.1
     ports:
-      - "${HOST_PORT}:22023/udp"
+      - "${HOST_GAME_PORT}:22023/udp"
+      - "${HOST_HTTP_PORT}:22000/tcp"
     volumes:
       - "./config/config.json:/app/config.json"
+      - "./config/config_http.json:/app/config_http.json"
       - "./plugins:/app/plugins"
       - "./libraries:/app/libraries"
 
