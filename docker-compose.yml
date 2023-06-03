@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   impostor:
-    image: aeonlucid/impostor:v1.8.1
+    image: aeonlucid/impostor:v1.8.2
     # image: aoirint/impostor:v20221223.1
     ports:
       - "${HOST_GAME_PORT}:22023/udp"
